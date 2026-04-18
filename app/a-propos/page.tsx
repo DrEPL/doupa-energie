@@ -17,7 +17,9 @@ export default function AProposPage() {
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glass border-primary/30 text-primary text-sm font-medium mb-6">
               Notre Histoire
             </div>
-            <h1 className="text-3xl sm:text-4xl md:text-6xl font-serif font-bold mb-4 md:mb-6 leading-tight">L'Expertise au service de <br className="hidden sm:block"/><span className="text-gradient">votre énergie</span>.</h1>
+            <h1 className="text-3xl sm:text-4xl md:text-6xl font-serif font-bold mb-4 md:mb-6 leading-tight">L'Expertise au service de <br className="hidden sm:block"/><span className="text-gradient font-normal px-2" style={{
+                  fontFamily: "var(--font-amalfi)"
+                }}>votre énergie</span>.</h1>
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
               Doupa Énergie s'impose comme un acteur incontournable dans le secteur des réseaux électriques au Sénégal. Guidés par l'excellence et l'innovation, nous construisons les infrastructures de demain.
             </p>

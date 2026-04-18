@@ -54,7 +54,12 @@ export default function ServicesPage() {
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-20">
           <FadeIn>
-            <h1 className="text-4xl md:text-6xl font-serif font-bold mb-6">Nos <span className="text-gradient">Expertises</span></h1>
+            <h1 className="text-4xl md:text-6xl font-serif font-bold mb-6">Nos <span className="text-gradient font-normal px-4" style={{
+                  fontFamily: "var(--font-amalfi)",
+                  lineHeight: "2",
+                  paddingTop: "0.5em",
+                  paddingBottom: "0.5em",
+                }}>Expertises</span></h1>
             <p className="text-xl text-muted-foreground">
               Des solutions complètes pour le transport, la distribution et le raccordement électrique, exécutées avec précision et conformité.
             </p>

@@ -16,13 +16,16 @@ export function Footer() {
           {/* Brand */}
           <div className="space-y-6">
             <Link href="/" className="flex items-center gap-3">
-              <div className="w-12 h-12 relative bg-background/50 p-1 border border-primary/20">
-                <Image
-                  src="/images/logo_doupa_energie.jpg"
-                  alt="Doupa Énergie Logo"
-                  fill
-                  className="object-contain rounded-md"
-                />
+              <div className="relative w-12 h-12 flex items-center justify-center rounded-lg bg-gradient-to-br from-primary to-secondary p-0.5 shadow-[0_0_15px_rgba(var(--primary),0.3)]">
+                <div className="w-full h-full rounded-lg flex items-center justify-center p-0 overflow-hidden">
+                  <Image
+                    src="/images/logo_doupa_energie.jpg"
+                    alt="Doupa Énergie"
+                    width={32}
+                    height={32}
+                    className="object-cover w-full h-full"
+                  />
+                </div>
               </div>
               <div>
                 <h3 className="font-serif font-bold text-xl">Doupa Énergie</h3>
@@ -85,7 +88,7 @@ export function Footer() {
                 Branchements
               </li>
               <li className="text-muted-foreground text-sm flex items-center gap-2">
-                <div className="w-1.5 h-1.5 rounded-full bg-primary" />
+                <div className="w-1.5 h-1.5 rounded-full bg-secondary" />
                 Vente de Matériel
               </li>
               <li className="text-muted-foreground text-sm flex items-center gap-2">

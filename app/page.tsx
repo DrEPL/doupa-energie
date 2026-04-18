@@ -16,8 +16,8 @@ export default function HomePage() {
       {/* HERO SECTION */}
       <section className="relative min-h-[90vh] py-20 flex items-center justify-center overflow-hidden">
         {/* Abstract Background Elements */}
-        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-primary/20 rounded-full blur-[120px] mix-blend-screen pointer-events-none" />
-        <div className="absolute bottom-1/4 right-1/4 w-[600px] h-[600px] bg-secondary/15 rounded-full blur-[150px] mix-blend-screen pointer-events-none" />
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 md:-translate-x-0 md:left-1/4 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-primary/20 rounded-full blur-[80px] md:blur-[120px] mix-blend-screen pointer-events-none" />
+        <div className="absolute bottom-1/4 left-1/2 -translate-x-1/2 md:-translate-x-0 md:left-auto md:right-1/4 w-[350px] md:w-[600px] h-[350px] md:h-[600px] bg-secondary/15 rounded-full blur-[100px] md:blur-[150px] mix-blend-screen pointer-events-none" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none" />
 
         <div className="container mx-auto px-4 relative z-10 text-center">
@@ -237,7 +237,7 @@ export default function HomePage() {
                     {/* Image avec effet de flottement (bounce doux) */}
                     <motion.div 
                       animate={{ y: [0, -10, 0] }}
-                      transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
+                      transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
                       className="absolute -inset-4 bg-[url('/images/Doupa_energie_agent_1.png')] bg-cover bg-center" 
                     />
 

@@ -73,7 +73,12 @@ export default function ContactPage() {
         
         <div className="text-center max-w-3xl mx-auto mb-10 md:mb-16">
           <FadeIn>
-            <h1 className="text-3xl sm:text-4xl md:text-6xl font-serif font-bold mb-4 md:mb-6 leading-tight">Discutons de votre <br className="block sm:hidden" /><span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">Projet</span></h1>
+            <h1 className="text-3xl sm:text-4xl md:text-6xl font-serif font-bold mb-4 md:mb-6 leading-tight">Discutons de votre <br className="block sm:hidden" /><span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary font-normal px-4" style={{
+                  fontFamily: "var(--font-amalfi)",
+                  lineHeight: "2",
+                  paddingTop: "0.5em",
+                  paddingBottom: "0.5em",
+                }}>Projet</span></h1>
             <p className="text-lg md:text-xl text-muted-foreground">
               Notre équipe d'experts est à votre disposition pour étudier vos besoins et vous proposer des solutions techniques adaptées.
             </p>

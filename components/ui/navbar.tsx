@@ -38,8 +38,8 @@ export function Navbar() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group">
-            <div className="relative w-12 h-12 flex items-center justify-center rounded-md bg-gradient-to-br from-primary to-secondary p-0 shadow-[0_0_15px_rgba(var(--primary),0.3)]">
-              <div className="w-full h-full rounded-md flex items-center justify-center p-0 overflow-hidden">
+            <div className="relative w-12 h-12 flex items-center justify-center rounded-lg bg-gradient-to-br from-primary to-secondary p-0.5 shadow-[0_0_15px_rgba(var(--primary),0.3)]">
+              <div className="w-full h-full rounded-lg flex items-center justify-center p-0 overflow-hidden">
                  <Image 
                   src="/images/logo_doupa_energie.jpg" 
                   alt="Doupa Énergie" 
