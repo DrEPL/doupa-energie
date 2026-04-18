@@ -63,8 +63,8 @@ ${formData.message}`
                 
                 <div className="space-y-8">
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
-                      <Phone className="w-5 h-5 text-primary" />
+                    <div className="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center shrink-0">
+                      <Phone className="w-5 h-5 text-secondary" />
                     </div>
                     <div>
                       <p className="text-sm text-muted-foreground font-medium mb-1">Téléphone</p>
@@ -84,8 +84,8 @@ ${formData.message}`
                   </div>
 
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center shrink-0">
-                      <MapPin className="w-5 h-5 text-accent" />
+                    <div className="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center shrink-0">
+                      <MapPin className="w-5 h-5 text-secondary" />
                     </div>
                     <div>
                       <p className="text-sm text-muted-foreground font-medium mb-1">Siège Social</p>
@@ -94,8 +94,8 @@ ${formData.message}`
                   </div>
 
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center shrink-0">
-                      <Clock className="w-5 h-5 text-white" />
+                    <div className="w-12 h-12 rounded-full bg-secondary/5 flex items-center justify-center shrink-0">
+                      <Clock className="w-5 h-5 text-secondary" />
                     </div>
                     <div>
                       <p className="text-sm text-muted-foreground font-medium mb-1">Heures d'ouverture</p>
