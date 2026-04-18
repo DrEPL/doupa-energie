@@ -12,13 +12,13 @@ export default function AProposPage() {
       <div className="container mx-auto px-4">
         
         {/* Header */}
-        <div className="max-w-3xl mb-20">
+        <div className="max-w-3xl mb-12 md:mb-20">
           <FadeIn>
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glass border-primary/30 text-primary text-sm font-medium mb-6">
               Notre Histoire
             </div>
-            <h1 className="text-4xl md:text-6xl font-serif font-bold mb-6">L'Expertise au service de <br/><span className="text-gradient">votre énergie</span>.</h1>
-            <p className="text-xl text-muted-foreground leading-relaxed">
+            <h1 className="text-3xl sm:text-4xl md:text-6xl font-serif font-bold mb-4 md:mb-6 leading-tight">L'Expertise au service de <br className="hidden sm:block"/><span className="text-gradient">votre énergie</span>.</h1>
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
               Doupa Énergie s'impose comme un acteur incontournable dans le secteur des réseaux électriques au Sénégal. Guidés par l'excellence et l'innovation, nous construisons les infrastructures de demain.
             </p>
           </FadeIn>
@@ -58,11 +58,11 @@ export default function AProposPage() {
           <div className="grid md:grid-cols-5 gap-12 items-center relative z-10">
             <div className="md:col-span-2">
               <FadeIn>
-                <div className="aspect-square rounded-2xl overflow-hidden relative border-4 border-white/5">
+                <div className="aspect-square rounded-2xl overflow-hidden relative border-4 border-white/5 mx-auto max-w-[280px] md:max-w-none">
                   <div className="absolute inset-0 bg-gradient-to-tr from-primary/40 to-transparent mix-blend-overlay z-10" />
                   {/* Image Placeholder */}
                   <div className="w-full h-full bg-muted flex items-center justify-center">
-                    <Users className="w-20 h-20 text-white/20" />
+                    <Users className="w-16 h-16 md:w-20 md:h-20 text-white/20" />
                   </div>
                 </div>
               </FadeIn>

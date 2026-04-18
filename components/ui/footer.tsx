@@ -84,6 +84,14 @@ export function Footer() {
                 <div className="w-1.5 h-1.5 rounded-full bg-secondary" />
                 Branchements
               </li>
+              <li className="text-muted-foreground text-sm flex items-center gap-2">
+                <div className="w-1.5 h-1.5 rounded-full bg-primary" />
+                Vente de Matériel
+              </li>
+              <li className="text-muted-foreground text-sm flex items-center gap-2">
+                <div className="w-1.5 h-1.5 rounded-full bg-secondary" />
+                Froid et Climatisation
+              </li>
             </ul>
           </div>
 
@@ -95,9 +103,12 @@ export function Footer() {
                 <MapPin className="w-5 h-5 text-primary shrink-0" />
                 <span>Dakar, Sénégal</span>
               </li>
-              <li className="flex items-center gap-3 text-sm text-muted-foreground">
-                <Phone className="w-5 h-5 text-primary shrink-0" />
-                <a href="tel:+221778084203" className="hover:text-white transition-colors">+221 77 808 42 03</a>
+              <li className="flex items-start gap-3 text-sm text-muted-foreground">
+                <Phone className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                <div className="flex flex-col gap-1">
+                  <a href="tel:+221779045959" className="hover:text-white transition-colors">+221 77 904 59 59</a>
+                  <a href="tel:+221784014934" className="hover:text-white transition-colors">+221 78 401 49 34</a>
+                </div>
               </li>
               <li className="flex items-center gap-3 text-sm text-muted-foreground">
                 <Mail className="w-5 h-5 text-primary shrink-0" />
@@ -110,7 +121,7 @@ export function Footer() {
 
         <div className="border-t border-white/10 pt-8 mt-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-xs text-muted-foreground">
-            &copy; {new Date().getFullYear()} Doupa Énergie. Tous droits réservés. Developed by Dr EPL.
+            &copy; {new Date().getFullYear()} Doupa Énergie. Tous droits réservés. By <Link href="https://drepl.cg" className="hover:text-white transition-colors">Dr EPL</Link>.
           </p>
           <div className="flex items-center gap-4 text-xs text-muted-foreground">
             <Link href="/mentions-legales" className="hover:text-white transition-colors">Mentions Légales</Link>

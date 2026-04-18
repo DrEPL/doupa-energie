@@ -80,10 +80,12 @@ export function Navbar() {
 
           {/* CTA & Mobile Toggle */}
           <div className="flex items-center gap-4">
-            <Button className="hidden md:flex bg-primary hover:bg-primary/90 text-primary-foreground shadow-[0_0_15px_rgba(var(--primary),0.5)]">
-              <Zap className="w-4 h-4 mr-2" />
-              Devis Rapide
-            </Button>
+            <Link href="/contact" className="hidden md:flex">
+              <Button className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-[0_0_15px_rgba(var(--primary),0.5)]">
+                <Zap className="w-4 h-4 mr-2" />
+                Devis Rapide
+              </Button>
+            </Link>
             
             <button
               className="md:hidden text-foreground p-2"
@@ -117,10 +119,12 @@ export function Navbar() {
                   {link.name}
                 </Link>
               ))}
-              <Button className="mt-4 w-full bg-primary" size="lg">
-                <Zap className="w-4 h-4 mr-2" />
-                Demander un devis
-              </Button>
+              <Link href="/contact" onClick={() => setMobileMenuOpen(false)}>
+                <Button className="mt-4 w-full bg-primary" size="lg">
+                  <Zap className="w-4 h-4 mr-2" />
+                  Demander un devis
+                </Button>
+              </Link>
             </div>
           </motion.div>
         )}

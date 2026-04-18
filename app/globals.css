@@ -1,3 +1,4 @@
+@import url('https://fonts.cdnfonts.com/css/amalfi-coast');
 @import "tailwindcss";
 @import "tw-animate-css";
 
@@ -69,6 +70,8 @@
 
   --radius: 0.75rem;
   /* Larger radius for modern feel */
+  
+  --font-amalfi: 'Amalfi Coast', cursive;
 }
 
 /* We force dark mode by default for the premium SaaS look */
