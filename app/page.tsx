@@ -247,7 +247,7 @@ export default function HomePage() {
                     {/* Texte - au dessus de tout */}
                     <div className="text-center z-10 p-8 absolute bottom-0 left-0 right-0">
                       <h3 className="text-3xl font-serif font-bold text-white mb-2 drop-shadow-lg">Innovation & Énergie</h3>
-                      <p className="text-white/80 drop-shadow">Nos experts sur le terrain.</p>
+                      <p className="text-white/80 drop-shadow">Notre équipe dévouée sur le terrain.</p>
                     </div>
 
                   </div>

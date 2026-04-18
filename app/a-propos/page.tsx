@@ -62,10 +62,13 @@ export default function AProposPage() {
               <FadeIn>
                 <div className="aspect-square rounded-2xl overflow-hidden relative border-4 border-white/5 mx-auto max-w-[280px] md:max-w-none">
                   <div className="absolute inset-0 bg-gradient-to-tr from-primary/40 to-transparent mix-blend-overlay z-10" />
-                  {/* Image Placeholder */}
-                  <div className="w-full h-full bg-muted flex items-center justify-center">
-                    <Users className="w-16 h-16 md:w-20 md:h-20 text-white/20" />
-                  </div>
+                  {/* Photo du PDG */}
+                  <Image 
+                    src="/images/pdg.jpeg" 
+                    alt="Robert Doupa - Managing Partner" 
+                    fill 
+                    className="object-cover"
+                  />
                 </div>
               </FadeIn>
             </div>

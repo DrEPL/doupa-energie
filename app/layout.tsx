@@ -40,7 +40,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Navbar />
-          <main className="p-4 lg:p-6">
+          <main className="">
             {children}
           </main>
           <Footer />
