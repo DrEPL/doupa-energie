@@ -3,7 +3,7 @@
 import React from "react"
 import { FadeIn } from "@/components/animations/fade-in"
 import { StaggerContainer, StaggerItem } from "@/components/animations/stagger-container"
-import { Network, Cable, Building, Zap, ArrowRight, CheckCircle2 } from "lucide-react"
+import { Network, Cable, Building, Zap, ArrowRight, CheckCircle2, ShoppingCart, Snowflake } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 
@@ -44,6 +44,24 @@ export default function ServicesPage() {
       title: "Branchements Électriques",
       description: "Raccordement final des abonnés au réseau de distribution. Nous assurons la liaison entre le réseau public et les installations privées en toute sécurité.",
       features: ["Branchements souterrains", "Branchements aéro-souterrains", "Coffrets de comptage", "Mise en conformité"]
+    },
+    {
+      id: "vente-materiel",
+      icon: ShoppingCart,
+      color: "text-primary",
+      bgColor: "bg-primary/20",
+      title: "Vente de Matériel Électrique",
+      description: "Fourniture d'équipements électriques professionnels et industriels de haute qualité. Nous sélectionnons les meilleurs composants pour garantir la durabilité de vos projets.",
+      features: ["Câbles et conducteurs HTA/BT", "Appareillage modulaire", "Éclairage et sécurité", "Coffrets et armoires électriques"]
+    },
+    {
+      id: "froid-climatisation",
+      icon: Snowflake,
+      color: "text-secondary",
+      bgColor: "bg-secondary/20",
+      title: "Froid et Climatisation",
+      description: "Étude, installation et maintenance de systèmes de climatisation et de froid industriel. Nous assurons le confort thermique et la fiabilité de vos processus.",
+      features: ["Climatisation tertiaire et industrielle", "Systèmes VRV / DRV", "Entretien et dépannage", "Optimisation énergétique"]
     }
   ]
 
