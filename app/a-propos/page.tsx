@@ -76,7 +76,7 @@ export default function AProposPage() {
                 <p className="text-primary font-medium text-lg mb-6">Managing Partner & Fondateur</p>
                 <div className="space-y-4 text-muted-foreground text-lg leading-relaxed mb-8">
                   <p>
-                    Fort de plusieurs décennies d'expérience dans le domaine de la distribution électrique haute et basse tension, Robert a fondé Doupa Énergie avec une vision claire : élever les standards de qualité et de sécurité au Sénégal.
+                    Fort de plusieurs années d'expérience dans le domaine de la distribution électrique haute et basse tension, Robert a fondé Doupa Énergie avec une vision claire : élever les standards de qualité et de sécurité au Sénégal.
                   </p>
                   <p>
                     Son leadership technique et sa passion pour l'ingénierie se reflètent dans chaque projet entrepris par l'entreprise, garantissant des résultats qui dépassent les attentes des clients.

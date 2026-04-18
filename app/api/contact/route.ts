@@ -93,15 +93,13 @@ export async function POST(request: Request) {
         .logo {
           font-size: 26px;
           font-weight: 800;
-          color: #0f172a;
+          color: #000000ff !important;
           letter-spacing: -0.5px;
           margin: 0;
         }
         
         .logo span {
-          background: linear-gradient(90deg, #ea580c 0%, #f59e0b 100%);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
+          color: #ea580c !important;
         }
         
         .badge {
