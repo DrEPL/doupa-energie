@@ -138,3 +138,17 @@
     @apply bg-clip-text text-transparent bg-gradient-to-r from-accent to-secondary;
   }
 }
+
+@keyframes gradient-move {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* === CLASSES UTILITY (v4.1) === */
+@utility animate-gradient {
+  animation: gradient-move 5s ease infinite;
+}

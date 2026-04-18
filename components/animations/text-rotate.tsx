@@ -6,33 +6,56 @@ import { motion, AnimatePresence } from "framer-motion"
 interface TextRotateProps {
   words: string[]
   className?: string
-  interval?: number
+  typingSpeed?: number
+  deletingSpeed?: number
+  delayBetweenWords?: number
 }
 
-export function TextRotate({ words, className = "", interval = 3000 }: TextRotateProps) {
-  const [index, setIndex] = useState(0)
+export function TextRotate({ 
+  words, 
+  className = "", 
+  typingSpeed = 100, 
+  deletingSpeed = 50, 
+  delayBetweenWords = 2000 
+}: TextRotateProps) {
+  const [text, setText] = useState("")
+  const [isDeleting, setIsDeleting] = useState(false)
+  const [loopNum, setLoopNum] = useState(0)
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      setIndex((prevIndex) => (prevIndex + 1) % words.length)
-    }, interval)
-    return () => clearInterval(timer)
-  }, [words.length, interval])
+    let ticker = setTimeout(() => {
+      handleTyping()
+    }, isDeleting ? deletingSpeed : typingSpeed)
+
+    return () => clearTimeout(ticker)
+  }, [text, isDeleting])
+
+  const handleTyping = () => {
+    const i = loopNum % words.length
+    const fullText = words[i]
+
+    if (isDeleting) {
+      setText(fullText.substring(0, text.length - 1))
+      if (text === "") {
+        setIsDeleting(false)
+        setLoopNum(loopNum + 1)
+      }
+    } else {
+      setText(fullText.substring(0, text.length + 1))
+      if (text === fullText) {
+        setTimeout(() => setIsDeleting(true), delayBetweenWords)
+      }
+    }
+  }
 
   return (
-    <div className="relative inline-block overflow-hidden whitespace-nowrap min-w-[300px] h-[1.2em] align-bottom">
-      <AnimatePresence mode="popLayout">
-        <motion.span
-          key={index}
-          initial={{ y: "100%", opacity: 0 }}
-          animate={{ y: "0%", opacity: 1 }}
-          exit={{ y: "-100%", opacity: 0 }}
-          transition={{ duration: 0.5, ease: "easeInOut" }}
-          className={`absolute left-0 top-0 ${className}`}
-        >
-          {words[index]}
-        </motion.span>
-      </AnimatePresence>
-    </div>
+    <span className={`inline-block ${className}`}>
+      {text}
+      <motion.span
+        animate={{ opacity: [0, 1, 0] }}
+        transition={{ repeat: Infinity, duration: 0.8 }}
+        className="inline-block ml-[2px] w-[3px] h-[1em] bg-current align-middle"
+      />
+    </span>
   )
 }

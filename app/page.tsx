@@ -22,7 +22,7 @@ export default function HomePage() {
         <div className="container mx-auto px-4 relative z-10 text-center">
           <FadeIn delay={0.1}>
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glass border-primary/30 bg-primary/5 text-primary text-sm font-medium mb-8">
-              <Zap className="w-4 h-4" />
+              <Zap className="w-4 h-4 animate-pulse text-yellow-500" />
               <span>L'énergie de demain, aujourd'hui.</span>
             </div>
           </FadeIn>
@@ -188,14 +188,24 @@ export default function HomePage() {
 
             <div className="relative">
               <FadeIn direction="left">
-                <div className="aspect-[4/5] rounded-3xl overflow-hidden relative glass border-white/10 p-2">
-                  <div className="w-full h-full rounded-2xl bg-gradient-to-br from-primary/20 via-secondary/10 to-background flex items-center justify-center relative overflow-hidden">
-                    <div className="absolute inset-0 bg-[url('/images/Doupa_energie_agent_1.png')] bg-cover bg-center mix-blend-overlay" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
-                    <div className="text-center z-10 p-8 self-end">
-                      <h3 className="text-3xl font-serif font-bold text-white mb-2">Innovation & Énergie</h3>
-                      <p className="text-white/80">Nos experts sur le terrain.</p>
+                <div className="aspect-[4/5] rounded-3xl overflow-hidden relative glass border-white/50 p-2">
+                  <div className="w-full h-full backdrop-blur-md rounded-2xl bg-gradient-to-br from-primary/50 via-secondary/50 to-background bg-[length:200%_100%] animate-gradient flex items-center justify-center relative overflow-hidden">
+
+                    {/* Dégradé du bas vers le haut */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent opacity-100" />
+
+                    {/* Image avec mix-blend-mode (choisissez une option) */}
+                    <div className="absolute inset-0 bg-[url('/images/Doupa_energie_agent_1.png')] bg-cover bg-center" />
+
+                    {/* Overlay sombre (optionnel - ajustez l'opacité) */}
+                    <div className="absolute inset-0 bg-black/20 bottom-0" />
+
+                    {/* Texte - au dessus de tout */}
+                    <div className="text-center z-10 p-8 absolute bottom-0 left-0 right-0">
+                      <h3 className="text-3xl font-serif font-bold text-white mb-2 drop-shadow-lg">Innovation & Énergie</h3>
+                      <p className="text-white/80 drop-shadow">Nos experts sur le terrain.</p>
                     </div>
+
                   </div>
                 </div>
               </FadeIn>
@@ -209,8 +219,8 @@ export default function HomePage() {
         <div className="container mx-auto px-4">
           <FadeIn>
             <div className="relative rounded-3xl overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/80 to-secondary opacity-90 z-10" />
-              <div className="absolute inset-0 bg-[url('/images/panneau%20solaire.png')] bg-cover bg-center mix-blend-overlay opacity-40 z-0" />
+              <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/80 to-secondary opacity-20 z-10 bg-[length:200%_100%] animate-gradient" />
+              <div className="absolute inset-0 bg-[url('/images/panneau_solaire.png')] bg-cover bg-center mix-blend-soft-light  opacity-100 z-0" />
 
               <div className="relative z-20 px-8 py-20 text-center max-w-4xl mx-auto">
                 <h2 className="text-4xl md:text-6xl font-serif font-bold text-white mb-6">Prêt à électrifier votre avenir ?</h2>
