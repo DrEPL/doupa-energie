@@ -40,7 +40,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Navbar />
-          <main className="flex-1">
+          <main className="p-6 lg:p-8">
             {children}
           </main>
           <Footer />
