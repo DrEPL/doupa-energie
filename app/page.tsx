@@ -1,315 +1,240 @@
 "use client"
 
-import type React from "react"
-import Image from "next/image"
-
-import { Phone, Mail, Zap, Building, Cable, Network } from "lucide-react"
+import React from "react"
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { useState } from "react"
+import { Zap, ShieldCheck, Activity, ArrowRight, Network, Cable, Building } from "lucide-react"
+import { FadeIn } from "@/components/animations/fade-in"
+import { StaggerContainer, StaggerItem } from "@/components/animations/stagger-container"
+import { TextRotate } from "@/components/animations/text-rotate"
 
 export default function HomePage() {
-  const [formData, setFormData] = useState({
-    nom: "",
-    prenom: "",
-    email: "",
-    telephone: "",
-    projet: "",
-  })
-
-  const scrollToContact = () => {
-    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })
-  }
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-
-    // Create email body with form data
-    const emailBody = `Bonjour,
-
-Je souhaite obtenir un devis pour mon projet électrique.
-
-Informations de contact:
-- Nom: ${formData.nom}
-- Prénom: ${formData.prenom}
-- Email: ${formData.email}
-- Téléphone: ${formData.telephone}
-
-Description du projet:
-${formData.projet}
-
-Cordialement,
-${formData.prenom} ${formData.nom}`
-
-    // Open email client with pre-filled information
-    const mailtoLink = `mailto:doupaenergie@gmail.com?subject=Demande de devis - ${formData.nom} ${formData.prenom}&body=${encodeURIComponent(emailBody)}`
-    window.location.href = mailtoLink
-  }
-
-  const handleInputChange = (field: string, value: string) => {
-    setFormData((prev) => ({ ...prev, [field]: value }))
-  }
-
   return (
-    <div className="min-h-screen bg-background">
-      {/* Header */}
-      <header className="bg-gradient-to-r from-primary via-secondary to-accent text-white">
-        <div className="container mx-auto px-4 py-6">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-4">
-              <div className="w-12 h-12 relative">
-                <Image
-                  src="/images/doupa-logo-new.png"
-                  alt="Doupa Énergie Logo"
-                  width={48}
-                  height={48}
-                  className="object-contain rounded-full"
-                />
-              </div>
-              <div>
-                <h1 className="text-2xl font-serif font-bold">Doupa Énergie</h1>
-                <p className="text-sm opacity-90">Votre partenaire de confiance en réseaux électrique</p>
-              </div>
+    <div className="pt-24 pb-16">
+      
+      {/* HERO SECTION */}
+      <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
+        {/* Abstract Background Elements */}
+        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-primary/20 rounded-full blur-[120px] mix-blend-screen pointer-events-none" />
+        <div className="absolute bottom-1/4 right-1/4 w-[600px] h-[600px] bg-secondary/15 rounded-full blur-[150px] mix-blend-screen pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none" />
+
+        <div className="container mx-auto px-4 relative z-10 text-center">
+          <FadeIn delay={0.1}>
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glass border-primary/30 bg-primary/5 text-primary text-sm font-medium mb-8">
+              <Zap className="w-4 h-4" />
+              <span>L'énergie de demain, aujourd'hui.</span>
             </div>
-            <nav className="hidden md:flex items-center gap-6">
-              <a href="#accueil" className="hover:text-accent transition-colors">
-                Accueil
-              </a>
-              <a href="#apropos" className="hover:text-accent transition-colors">
-                À propos
-              </a>
-              <a href="#services" className="hover:text-accent transition-colors">
-                Services
-              </a>
-              <a href="#contact" className="hover:text-accent transition-colors">
-                Contact
-              </a>
-            </nav>
-          </div>
-        </div>
-      </header>
+          </FadeIn>
+          
+          <FadeIn delay={0.2} direction="up">
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif font-bold tracking-tight mb-8">
+              Infrastructures <br />
+              <span className="text-gradient">
+                <TextRotate words={["Électriques", "Solaires", "Résilientes"]} />
+              </span>
+            </h1>
+          </FadeIn>
 
-      {/* Hero Section */}
-      <section id="accueil" className="py-20 bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl md:text-6xl font-serif font-bold text-foreground mb-6">
-            Expertise en Réseaux Électriques
-          </h2>
-          <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Spécialiste en maintenance et installation électrique, nous assurons la fiabilité de vos réseaux de
-            distribution électrique HTA et BT au Sénégal.
-          </p>
-          <Button size="lg" className="bg-primary hover:bg-primary/90" onClick={scrollToContact}>
-            <Phone className="w-5 h-5 mr-2" />
-            Contactez-nous
-          </Button>
-        </div>
-      </section>
-
-      {/* Services Section */}
-      <section id="services" className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-4">Nos Services</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Une gamme complète de services pour tous vos besoins en électricité
+          <FadeIn delay={0.3} direction="up">
+            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
+              Nous concevons, installons et maintenons des réseaux de distribution électrique HTA et BT avec une précision d'ingénierie et une fiabilité absolue.
             </p>
-          </div>
+          </FadeIn>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <Card className="text-center hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <div className="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Network className="w-8 h-8 text-white" />
-                </div>
-                <CardTitle className="font-serif">Réseaux Aériens</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription>Travaux de réseaux aériens de distribution électrique HTA et BT</CardDescription>
-              </CardContent>
-            </Card>
-
-            <Card className="text-center hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <div className="w-16 h-16 bg-gradient-to-r from-secondary to-accent rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Zap className="w-8 h-8 text-white" />
-                </div>
-                <CardTitle className="font-serif">Branchement BT</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription>Branchement électrique basse tension pour particuliers et entreprises</CardDescription>
-              </CardContent>
-            </Card>
-
-            <Card className="text-center hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <div className="w-16 h-16 bg-gradient-to-r from-accent to-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Building className="w-8 h-8 text-white" />
-                </div>
-                <CardTitle className="font-serif">Distribution HTA/BT</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription>Travaux de réseaux de distribution électrique haute et basse tension</CardDescription>
-              </CardContent>
-            </Card>
-
-            <Card className="text-center hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <div className="w-16 h-16 bg-gradient-to-r from-primary to-accent rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Cable className="w-8 h-8 text-white" />
-                </div>
-                <CardTitle className="font-serif">Réseaux Souterrains</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription>Travaux de réseaux souterrains de distribution électrique HTA et BT</CardDescription>
-              </CardContent>
-            </Card>
-          </div>
+          <FadeIn delay={0.4} direction="up">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Button size="lg" className="w-full sm:w-auto h-14 px-8 bg-primary hover:bg-primary/90 text-white shadow-[0_0_20px_rgba(var(--primary),0.4)] text-lg rounded-xl">
+                Démarrer un projet
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Button>
+              <Button size="lg" variant="outline" className="w-full sm:w-auto h-14 px-8 border-white/10 hover:bg-white/5 text-lg rounded-xl glass">
+                Découvrir nos services
+              </Button>
+            </div>
+          </FadeIn>
         </div>
       </section>
 
-      {/* About Section */}
-      <section id="apropos" className="py-20 bg-muted">
+      {/* STATS / TRUST SECTION */}
+      <section className="py-20 border-y border-white/5 bg-black/20">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-6">
-                À Propos de Doupa Énergie
-              </h2>
-              <p className="text-lg text-muted-foreground mb-6">
-                Dirigée par Robert Doupa, Managing Partner, Doupa Énergie est votre partenaire de confiance pour tous
-                vos projets électriques au Sénégal.
-              </p>
-              <div className="space-y-4">
-                <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-primary rounded-full"></div>
-                  <span className="text-foreground font-medium">Fiabilité</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-secondary rounded-full"></div>
-                  <span className="text-foreground font-medium">Expertise</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-accent rounded-full"></div>
-                  <span className="text-foreground font-medium">Sécurité</span>
-                </div>
-              </div>
+          <StaggerContainer className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 text-center">
+            <StaggerItem>
+              <div className="text-4xl md:text-5xl font-serif font-bold text-gradient mb-2">15+</div>
+              <div className="text-sm text-muted-foreground font-medium uppercase tracking-wider">Années d'expertise</div>
+            </StaggerItem>
+            <StaggerItem>
+              <div className="text-4xl md:text-5xl font-serif font-bold text-white mb-2">500+</div>
+              <div className="text-sm text-muted-foreground font-medium uppercase tracking-wider">Projets Réussis</div>
+            </StaggerItem>
+            <StaggerItem>
+              <div className="text-4xl md:text-5xl font-serif font-bold text-gradient-electric mb-2">100%</div>
+              <div className="text-sm text-muted-foreground font-medium uppercase tracking-wider">Conformité Sécurité</div>
+            </StaggerItem>
+            <StaggerItem>
+              <div className="text-4xl md:text-5xl font-serif font-bold text-white mb-2">24/7</div>
+              <div className="text-sm text-muted-foreground font-medium uppercase tracking-wider">Support Client</div>
+            </StaggerItem>
+          </StaggerContainer>
+        </div>
+      </section>
+
+      {/* SERVICES PREVIEW */}
+      <section className="py-32 relative">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+            <div className="max-w-2xl">
+              <FadeIn>
+                <h2 className="text-3xl md:text-5xl font-serif font-bold mb-6">Expertise <span className="text-primary">Technique</span></h2>
+                <p className="text-lg text-muted-foreground">Une maîtrise complète de la chaîne de distribution électrique, du réseau aérien jusqu'au raccordement final.</p>
+              </FadeIn>
             </div>
-            <div className="bg-gradient-to-br from-primary/20 via-secondary/20 to-accent/20 rounded-lg p-8">
-              <div className="text-center">
-                <div className="w-24 h-24 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-3xl font-bold text-white">RD</span>
+            <FadeIn delay={0.2} direction="left">
+              <Link href="/services">
+                <Button variant="ghost" className="group text-primary hover:text-primary/80 hover:bg-transparent">
+                  Voir tous les services 
+                  <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </Link>
+            </FadeIn>
+          </div>
+
+          <StaggerContainer className="grid md:grid-cols-3 gap-6">
+            {/* Service 1 */}
+            <StaggerItem>
+              <div className="glass-card rounded-2xl p-8 h-full group hover:-translate-y-2 transition-transform duration-300">
+                <div className="w-14 h-14 rounded-xl bg-primary/20 flex items-center justify-center mb-6 text-primary group-hover:scale-110 transition-transform">
+                  <Network className="w-7 h-7" />
                 </div>
-                <h3 className="text-xl font-serif font-bold text-foreground mb-2">Robert Doupa</h3>
-                <p className="text-secondary font-medium mb-4">Managing Partner</p>
-                <p className="text-muted-foreground">
-                  Expert en réseaux électriques avec une expérience approfondie dans le domaine de la distribution
-                  électrique.
+                <h3 className="text-xl font-bold mb-3 text-white">Réseaux Aériens</h3>
+                <p className="text-muted-foreground leading-relaxed mb-6">
+                  Déploiement et maintenance de lignes électriques aériennes Haute et Basse Tension avec des matériaux de pointe.
                 </p>
               </div>
+            </StaggerItem>
+
+            {/* Service 2 */}
+            <StaggerItem>
+              <div className="glass-card rounded-2xl p-8 h-full group hover:-translate-y-2 transition-transform duration-300 relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="relative z-10">
+                  <div className="w-14 h-14 rounded-xl bg-secondary/20 flex items-center justify-center mb-6 text-secondary group-hover:scale-110 transition-transform">
+                    <Cable className="w-7 h-7" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3 text-white">Réseaux Souterrains</h3>
+                  <p className="text-muted-foreground leading-relaxed mb-6">
+                    Solutions d'enfouissement sécurisées pour une distribution électrique urbaine discrète et résiliente.
+                  </p>
+                </div>
+              </div>
+            </StaggerItem>
+
+            {/* Service 3 */}
+            <StaggerItem>
+              <div className="glass-card rounded-2xl p-8 h-full group hover:-translate-y-2 transition-transform duration-300">
+                <div className="w-14 h-14 rounded-xl bg-primary/20 flex items-center justify-center mb-6 text-primary group-hover:scale-110 transition-transform">
+                  <Building className="w-7 h-7" />
+                </div>
+                <h3 className="text-xl font-bold mb-3 text-white">Postes HTA/BT</h3>
+                <p className="text-muted-foreground leading-relaxed mb-6">
+                  Installation de postes de transformation et raccordements complexes pour industriels et promoteurs.
+                </p>
+              </div>
+            </StaggerItem>
+          </StaggerContainer>
+        </div>
+      </section>
+
+      {/* WHY CHOOSE US */}
+      <section className="py-24 relative overflow-hidden">
+        <div className="absolute right-0 top-0 w-1/3 h-full bg-primary/5 blur-[100px] pointer-events-none" />
+        
+        <div className="container mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <FadeIn>
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glass border-white/10 text-sm font-medium mb-6">
+                  <ShieldCheck className="w-4 h-4 text-secondary" />
+                  <span className="text-secondary">Notre Engagement</span>
+                </div>
+                <h2 className="text-3xl md:text-5xl font-serif font-bold mb-6">L'Excellence comme <br/> Standard.</h2>
+                <p className="text-lg text-muted-foreground mb-8">
+                  Chez Doupa Énergie, nous ne faisons aucun compromis sur la sécurité et la qualité. Chaque projet est traité avec la plus grande rigueur technique.
+                </p>
+              </FadeIn>
+              
+              <StaggerContainer className="space-y-6">
+                <StaggerItem className="flex gap-4">
+                  <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center shrink-0">
+                    <Activity className="w-6 h-6 text-primary" />
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-bold text-white mb-2">Performance Continue</h4>
+                    <p className="text-muted-foreground">Des infrastructures conçues pour durer et supporter les montées en charge de demain.</p>
+                  </div>
+                </StaggerItem>
+                <StaggerItem className="flex gap-4">
+                  <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center shrink-0">
+                    <ShieldCheck className="w-6 h-6 text-secondary" />
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-bold text-white mb-2">Sécurité Maximale</h4>
+                    <p className="text-muted-foreground">Respect strict des normes en vigueur pour protéger vos installations et vos équipes.</p>
+                  </div>
+                </StaggerItem>
+              </StaggerContainer>
+            </div>
+            
+            <div className="relative">
+              <FadeIn direction="left">
+                <div className="aspect-[4/5] rounded-3xl overflow-hidden relative glass border-white/10 p-2">
+                  <div className="w-full h-full rounded-2xl bg-gradient-to-br from-primary/20 via-secondary/10 to-background flex items-center justify-center relative overflow-hidden">
+                    <div className="absolute inset-0 bg-[url('/images/Doupa_energie_agent_1.png')] bg-cover bg-center mix-blend-overlay opacity-60" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
+                    <div className="text-center z-10 p-8 self-end">
+                      <h3 className="text-3xl font-serif font-bold text-white mb-2">Innovation & Énergie</h3>
+                      <p className="text-white/80">Nos experts sur le terrain.</p>
+                    </div>
+                  </div>
+                </div>
+              </FadeIn>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section id="contact" className="py-20">
+      {/* CTA SECTION */}
+      <section className="py-24">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-4">Contactez-nous</h2>
-            <p className="text-lg text-muted-foreground">
-              Prêt à démarrer votre projet ? Contactez-nous dès aujourd'hui
-            </p>
-          </div>
-
-          <div className="max-w-2xl mx-auto">
-            <div className="space-y-8">
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center">
-                  <Phone className="w-6 h-6 text-white" />
-                </div>
-                <div>
-                  <h3 className="font-serif font-bold text-foreground">Téléphone</h3>
-                  <a href="tel:+221778084203" className="text-primary hover:text-primary/80 text-lg font-medium">
-                    +221 77 808 42 03
+          <FadeIn>
+            <div className="relative rounded-3xl overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/80 to-secondary opacity-90 z-10" />
+              <div className="absolute inset-0 bg-[url('/images/panneau%20solaire.png')] bg-cover bg-center mix-blend-overlay opacity-40 z-0" />
+              
+              <div className="relative z-20 px-8 py-20 text-center max-w-4xl mx-auto">
+                <h2 className="text-4xl md:text-6xl font-serif font-bold text-white mb-6">Prêt à électrifier votre avenir ?</h2>
+                <p className="text-xl text-white/80 mb-10">
+                  Contactez nos experts pour une étude personnalisée de vos besoins en infrastructures électriques.
+                </p>
+                <div className="flex flex-col sm:flex-row justify-center gap-4">
+                  <Link href="/contact">
+                    <Button size="lg" className="w-full sm:w-auto h-14 px-8 bg-white text-primary hover:bg-white/90 text-lg rounded-xl">
+                      Demander un devis
+                    </Button>
+                  </Link>
+                  <a href="tel:+221778084203">
+                    <Button size="lg" variant="outline" className="w-full sm:w-auto h-14 px-8 border-white/30 hover:bg-white/10 text-white text-lg rounded-xl">
+                      Nous appeler
+                    </Button>
                   </a>
                 </div>
-              </div>
-
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-gradient-to-r from-secondary to-accent rounded-full flex items-center justify-center">
-                  <Mail className="w-6 h-6 text-white" />
-                </div>
-                <div>
-                  <h3 className="font-serif font-bold text-foreground">Email</h3>
-                  <a
-                    href="mailto:doupaenergie@gmail.com"
-                    className="text-primary hover:text-primary/80 text-lg font-medium"
-                  >
-                    doupaenergie@gmail.com
-                  </a>
-                </div>
-              </div>
-
-              <div className="bg-gradient-to-r from-primary/10 via-secondary/10 to-accent/10 rounded-lg p-6">
-                <h3 className="font-serif font-bold text-foreground mb-2">Horaires d'ouverture</h3>
-                <p className="text-muted-foreground">Lundi - Vendredi: 8h00 - 18h00</p>
-                <p className="text-muted-foreground">Samedi: 8h00 - 12h00</p>
-                <p className="text-muted-foreground">Urgences: 24h/24, 7j/7</p>
               </div>
             </div>
-          </div>
+          </FadeIn>
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-gradient-to-r from-primary via-secondary to-accent text-white py-12">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-3 gap-8">
-            <div>
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 relative">
-                  <Image
-                    src="/images/doupa-logo-new.png"
-                    alt="Doupa Énergie Logo"
-                    width={40}
-                    height={40}
-                    className="object-contain rounded-full"
-                  />
-                </div>
-                <div>
-                  <h3 className="font-serif font-bold">Doupa Énergie</h3>
-                  <p className="text-sm opacity-90">Votre partenaire de confiance</p>
-                </div>
-              </div>
-              <p className="text-sm opacity-80">Spécialiste en maintenance et installation électrique au Sénégal</p>
-            </div>
-
-            <div>
-              <h4 className="font-serif font-bold mb-4">Services</h4>
-              <ul className="space-y-2 text-sm opacity-80">
-                <li>Réseaux aériens HTA/BT</li>
-                <li>Branchement électrique BT</li>
-                <li>Distribution électrique</li>
-                <li>Réseaux souterrains</li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="font-serif font-bold mb-4">Contact</h4>
-              <div className="space-y-2 text-sm opacity-80">
-                <p>+221 77 808 42 03</p>
-                <p>doupaenergie@gmail.com</p>
-                <p>Robert Doupa - Managing Partner</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="border-t border-white/20 mt-8 pt-8 text-center text-sm opacity-80">
-            <p>&copy; 2025 Doupa Énergie. Tous droits réservés.</p>
-          </div>
-        </div>
-      </footer>
     </div>
   )
 }

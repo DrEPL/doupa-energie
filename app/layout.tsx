@@ -1,26 +1,28 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Work_Sans, Open_Sans } from "next/font/google"
+import { Inter, Space_Grotesk } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
+import { Navbar } from "@/components/ui/navbar"
+import { Footer } from "@/components/ui/footer"
+import { ThemeProvider } from "@/components/theme-provider"
 
-const workSans = Work_Sans({
+const inter = Inter({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-work-sans",
+  variable: "--font-inter",
 })
 
-const openSans = Open_Sans({
+const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-open-sans",
+  variable: "--font-space-grotesk",
 })
 
 export const metadata: Metadata = {
-  title: "Doupa Énergie - Votre partenaire de confiance en réseaux électrique",
+  title: "Doupa Énergie | Réseaux Électriques & Innovation",
   description:
-    "Spécialiste en maintenance et installation électrique. Travaux de réseaux de distribution électrique HTA et BT au Sénégal.",
-  generator: "v0.app",
+    "Expert en maintenance et installation électrique. Infrastructures HTA/BT, innovation et fiabilité au Sénégal.",
 }
 
 export default function RootLayout({
@@ -29,10 +31,21 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="fr" className={`${workSans.variable} ${openSans.variable} antialiased`}>
-      <body className="font-sans">
-        {children}
-        <Analytics />
+    <html lang="fr" className={`${inter.variable} ${spaceGrotesk.variable} antialiased dark`} suppressHydrationWarning>
+      <body className="font-sans min-h-screen flex flex-col bg-background text-foreground overflow-x-hidden">
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem={false}
+          disableTransitionOnChange
+        >
+          <Navbar />
+          <main className="flex-1">
+            {children}
+          </main>
+          <Footer />
+          <Analytics />
+        </ThemeProvider>
       </body>
     </html>
   )
