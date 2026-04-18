@@ -12,16 +12,16 @@ export function Footer() {
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-          
+
           {/* Brand */}
           <div className="space-y-6">
             <Link href="/" className="flex items-center gap-3">
-              <div className="w-12 h-12 relative bg-background/50 rounded-full p-1 border border-primary/20">
+              <div className="w-12 h-12 relative bg-background/50 p-1 border border-primary/20">
                 <Image
-                  src="/images/logo_doupa_energie.png"
+                  src="/images/logo_doupa_energie.jpg"
                   alt="Doupa Énergie Logo"
                   fill
-                  className="object-contain"
+                  className="object-contain rounded-md"
                 />
               </div>
               <div>
@@ -39,7 +39,7 @@ export function Footer() {
               <a href="#" className="w-10 h-10 rounded-full bg-muted flex items-center justify-center hover:bg-secondary hover:text-white transition-colors">
                 <Facebook className="w-4 h-4" />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-muted flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+              <a href="#" className="w-10 h-10 rounded-full bg-muted flex items-center justify-center hover:bg-accent hover:text-white transition-colors">
                 <Twitter className="w-4 h-4" />
               </a>
             </div>
@@ -69,7 +69,7 @@ export function Footer() {
             <h4 className="font-serif font-semibold text-lg mb-6">Expertise</h4>
             <ul className="space-y-4">
               <li className="text-muted-foreground text-sm flex items-center gap-2">
-                <div className="w-1.5 h-1.5 rounded-full bg-primary" />
+                <div className="w-1.5 h-1.5 rounded-full bg-secondary" />
                 Réseaux Aériens
               </li>
               <li className="text-muted-foreground text-sm flex items-center gap-2">
@@ -77,7 +77,7 @@ export function Footer() {
                 Réseaux Souterrains
               </li>
               <li className="text-muted-foreground text-sm flex items-center gap-2">
-                <div className="w-1.5 h-1.5 rounded-full bg-primary" />
+                <div className="w-1.5 h-1.5 rounded-full bg-secondary" />
                 Distribution HTA/BT
               </li>
               <li className="text-muted-foreground text-sm flex items-center gap-2">
@@ -96,7 +96,7 @@ export function Footer() {
                 <span>Dakar, Sénégal</span>
               </li>
               <li className="flex items-center gap-3 text-sm text-muted-foreground">
-                <Phone className="w-5 h-5 text-secondary shrink-0" />
+                <Phone className="w-5 h-5 text-primary shrink-0" />
                 <a href="tel:+221778084203" className="hover:text-white transition-colors">+221 77 808 42 03</a>
               </li>
               <li className="flex items-center gap-3 text-sm text-muted-foreground">
@@ -110,7 +110,7 @@ export function Footer() {
 
         <div className="border-t border-white/10 pt-8 mt-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-xs text-muted-foreground">
-            &copy; {new Date().getFullYear()} Doupa Énergie. Tous droits réservés.
+            &copy; {new Date().getFullYear()} Doupa Énergie. Tous droits réservés. Developed by Dr EPL.
           </p>
           <div className="flex items-center gap-4 text-xs text-muted-foreground">
             <Link href="/mentions-legales" className="hover:text-white transition-colors">Mentions Légales</Link>

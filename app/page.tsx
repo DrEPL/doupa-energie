@@ -11,7 +11,7 @@ import { TextRotate } from "@/components/animations/text-rotate"
 export default function HomePage() {
   return (
     <div className="pt-24 pb-16">
-      
+
       {/* HERO SECTION */}
       <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
         {/* Abstract Background Elements */}
@@ -26,7 +26,7 @@ export default function HomePage() {
               <span>L'énergie de demain, aujourd'hui.</span>
             </div>
           </FadeIn>
-          
+
           <FadeIn delay={0.2} direction="up">
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif font-bold tracking-tight mb-8">
               Infrastructures <br />
@@ -93,7 +93,7 @@ export default function HomePage() {
             <FadeIn delay={0.2} direction="left">
               <Link href="/services">
                 <Button variant="ghost" className="group text-primary hover:text-primary/80 hover:bg-transparent">
-                  Voir tous les services 
+                  Voir tous les services
                   <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </Link>
@@ -149,7 +149,7 @@ export default function HomePage() {
       {/* WHY CHOOSE US */}
       <section className="py-24 relative overflow-hidden">
         <div className="absolute right-0 top-0 w-1/3 h-full bg-primary/5 blur-[100px] pointer-events-none" />
-        
+
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
@@ -158,12 +158,12 @@ export default function HomePage() {
                   <ShieldCheck className="w-4 h-4 text-secondary" />
                   <span className="text-secondary">Notre Engagement</span>
                 </div>
-                <h2 className="text-3xl md:text-5xl font-serif font-bold mb-6">L'Excellence comme <br/> Standard.</h2>
+                <h2 className="text-3xl md:text-5xl font-serif font-bold mb-6">L'Excellence comme <br /> Standard.</h2>
                 <p className="text-lg text-muted-foreground mb-8">
                   Chez Doupa Énergie, nous ne faisons aucun compromis sur la sécurité et la qualité. Chaque projet est traité avec la plus grande rigueur technique.
                 </p>
               </FadeIn>
-              
+
               <StaggerContainer className="space-y-6">
                 <StaggerItem className="flex gap-4">
                   <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center shrink-0">
@@ -185,12 +185,12 @@ export default function HomePage() {
                 </StaggerItem>
               </StaggerContainer>
             </div>
-            
+
             <div className="relative">
               <FadeIn direction="left">
                 <div className="aspect-[4/5] rounded-3xl overflow-hidden relative glass border-white/10 p-2">
                   <div className="w-full h-full rounded-2xl bg-gradient-to-br from-primary/20 via-secondary/10 to-background flex items-center justify-center relative overflow-hidden">
-                    <div className="absolute inset-0 bg-[url('/images/Doupa_energie_agent_1.png')] bg-cover bg-center mix-blend-overlay opacity-60" />
+                    <div className="absolute inset-0 bg-[url('/images/Doupa_energie_agent_1.png')] bg-cover bg-center mix-blend-overlay" />
                     <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
                     <div className="text-center z-10 p-8 self-end">
                       <h3 className="text-3xl font-serif font-bold text-white mb-2">Innovation & Énergie</h3>
@@ -211,7 +211,7 @@ export default function HomePage() {
             <div className="relative rounded-3xl overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/80 to-secondary opacity-90 z-10" />
               <div className="absolute inset-0 bg-[url('/images/panneau%20solaire.png')] bg-cover bg-center mix-blend-overlay opacity-40 z-0" />
-              
+
               <div className="relative z-20 px-8 py-20 text-center max-w-4xl mx-auto">
                 <h2 className="text-4xl md:text-6xl font-serif font-bold text-white mb-6">Prêt à électrifier votre avenir ?</h2>
                 <p className="text-xl text-white/80 mb-10">
